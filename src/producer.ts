@@ -16,7 +16,7 @@ const weatherTopic = process.env.KAFKA_TOPIC as string;
 const fetchWeatherData = async () => {
     try {
         const response = await axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?q=Melbourne&appid=${process.env.OPENWEATHER_API_KEY}`,
+            `https://api.openweathermap.org/data/2.5/weather?q=Melbourne,AU&units=metric&appid=${process.env.OPENWEATHER_API_KEY}`,
         );
         return response.data;
     } catch (error) {
